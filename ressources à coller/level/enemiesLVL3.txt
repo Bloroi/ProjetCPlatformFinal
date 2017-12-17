@@ -1,3 +1,7 @@
-serpent1,images/Serpent.png,4,4,150,200,3100.0,425.0,0.2,150.0,3;
-ogre1grand,images/ogre.png,4,4,300,350,3050.0,425.0,0.1,250.0,3;
-ogre2petit,images/ogre.png,4,4,100,100,2900.0,425.0,0.1,350.0,3;
+Squel,images/Serpent.png,4,4,150,200,1500.0,425.0,0.2,150.0,3;
+ogre,images/ogre.png,4,4,300,350,2250.0,425.0,0.1,250.0,3;
+serpend,images/Serpent.png,4,4,150,200,3000.0,425.0,0.1,350.0,3;
+zombie,images/S2.png,4,4,150,200,2900.0,3500.0,0.1,350.0,3;
+dragon,images/Dragon.png,4,4,300,350,4500.0,425.0,0.1,350.0,3;
+cavalier,images/Cavalier.png,4,4,200,250,5500.0,425.0,0.1,350.0,3;
+Boss,images/Boss.png,4,4,800,800,11999.0,-425.0,0.1,50.0,30;

@@ -16,6 +16,7 @@ private:
     float speed;
     bool faceRight;
     bool key;
+    bool key2;
     sf::Vector2f velocity;
     bool canJump;
     float jumpHeight;
@@ -26,7 +27,7 @@ private:
 public:
     /*FORME CANONIQUE*/
     Player();
-    Player(sf::Texture* texture,sf::Vector2u imageCount,float switchTime,float speed,float jumpHeight, int score = 0,int health = 5, bool key = false);
+    Player(sf::Texture* texture,sf::Vector2u imageCount,float switchTime,float speed,float jumpHeight, int score = 0,int health = 5, bool key = false,bool key2 = false);
     Player(const Player& c);
     ~Player();
     Player& operator=(const Player& e);
@@ -47,6 +48,8 @@ public:
     void setHealth(int newHealth){health = newHealth;}
     int getKey()const{return key;}
     void setKey(int newKey){key = newKey;}
+    int getKey2()const{return key2;}
+    void setKey2(int newKey){key2 = newKey;}
     /*bool collisions(Enemy e)
     {
         this->getGlo

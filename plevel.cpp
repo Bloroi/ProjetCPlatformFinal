@@ -10,8 +10,8 @@ PLevel::PLevel(sf::RenderWindow* window): PGame(window)
         readennemy(enemies,"level/enemiesLVL1.txt");
 
         //ITEMS
-        items.push_back(Item(sf::Vector2f(80,80),sf::Vector2f(3000,-4950),"images/key.png"));
-        items.push_back(Item(sf::Vector2f(150,200),sf::Vector2f(12225,-5025),"images/porte.png"));
+        items.push_back(Item(sf::Vector2f(80,80),sf::Vector2f(13000,-1050),"images/key.png"));
+        items.push_back(Item(sf::Vector2f(150,200),sf::Vector2f(15125,-5900),"images/porte.png"));
 }
 
 PLevel::PLevel(const PLevel& b){
@@ -52,6 +52,28 @@ PLevel::~PLevel()
 void PLevel::init()
 {
     initDeltaTime();
+
+    /*Gestion collision avec les items*/
+    for(Item& item : items) // for each
+    {
+        if(items[0].GetCollider().CheckCollect(player.GetCollider())){
+            if(item.GetCollider().CheckCollect(player.GetCollider())){
+                item.setPos(sf::Vector2f(0.00f,0.00f));
+                player.setKey(true);
+                se->playPickItem();
+             }
+        }else{
+            if(items[1].GetCollider().CheckCollect(player.GetCollider()) && player.getKey()){
+                   setActiveP(PLEVEL2);
+
+            }
+        }
+
+
+    }
+
+
+
     collision();
     camera();
     drawAll();

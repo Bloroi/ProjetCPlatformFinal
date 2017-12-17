@@ -87,23 +87,7 @@ PGame::collision()
                 }
             }
 
-            /*Gestion collision avec les items*/
-            for(Item& item : items) // for each
-            {
-                if(items[0].GetCollider().CheckCollect(player.GetCollider())){
-                    if(item.GetCollider().CheckCollect(player.GetCollider())){
-                        item.setPos(sf::Vector2f(0.00f,0.00f));
-                        player.setKey(true);
-                        se->playPickItem();
-                     }
-                }else{
-                    if(items[1].GetCollider().CheckCollect(player.GetCollider()) && player.getKey()){
 
-                    }
-                }
-
-
-            }
 
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::E)){
 
@@ -127,11 +111,8 @@ PGame::collision()
 
 
             for(int i=0; i<enemies.size();i++){
-               if((enemies[i]->GetPosition().x - player.GetPosition().x) <= 500 && (enemies[i]->GetPosition().x - player.GetPosition().x) >= -500){
-                   cout<<"OK";
-                   Projectile newProjectile(&projectileTexture,sf::Vector2f(20,70),2);
-                   newProjectile.setPosition(sf::Vector2f(enemies[i]->GetPosition()));
-                   projectileVector.push_back(newProjectile);
+               if(player.GetCollider().CheckCollision(enemies[i]->GetCollider(),direction,1.00f)){
+                    player.setPosition(sf::Vector2f(206.0f,206.0f));
                }
                if(enemies[i]->getHealth() <= 0){
                     enemies.erase(enemies.begin()+i);

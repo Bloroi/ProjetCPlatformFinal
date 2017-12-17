@@ -9,8 +9,7 @@ PLevel3::PLevel3(sf::RenderWindow* window): PGame(window)
         //ennemies
         readennemy(enemies,"level/enemiesLVL3.txt");
 
-        //ITEMS
-        items.push_back(Item(sf::Vector2f(80,80),sf::Vector2f(570,420)));
+
 }
 
 PLevel3::PLevel3(const PLevel3& b){
@@ -24,7 +23,7 @@ PLevel3::PLevel3(const PLevel3& b){
 
         this->enemies = b.enemies;
 
-        this->items= b.items;
+
 
 }
 
@@ -38,7 +37,6 @@ PLevel3& PLevel3::operator=(const PLevel3& b){
 
         this->enemies = b.enemies;
 
-        this->items= b.items;
     }
     return *this;
 }
@@ -51,6 +49,9 @@ PLevel3::~PLevel3()
 void PLevel3::init()
 {
     initDeltaTime();
+
+
+
     collision();
     camera();
     drawAll();
