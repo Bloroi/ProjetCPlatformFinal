@@ -21,6 +21,7 @@ private :
     sf::Texture projectileTexture;
     /*PROJECTILE*/
     std::vector<Projectile> projectileVector;
+    std::vector<Projectile> projectileVectorEnemy;
     std::vector<Enemy*> enemies;
     std::vector<Platform> platforms;
     std::vector<Item> items;

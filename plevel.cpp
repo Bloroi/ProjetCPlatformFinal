@@ -157,12 +157,8 @@ void PLevel::init()
 
 
                     for(int i=0; i<enemies.size();i++){
-                       if(enemies[i]->GetPosition().x == player.GetPosition().x){
-                           //céline ?
-                           //la condition au dessus si je la met il se passe rien
-                           //alors que si je la met pas il meurt par les missiles qu'il tirent
-                           //Qu'est ce qui n'est pas bon dans la condition ? normalement il devrait tirer ?
-                           //je vais manger si tu as une idée dis moi
+                       if((enemies[i]->GetPosition().x - player.GetPosition().x) <= 500 && (enemies[i]->GetPosition().x - player.GetPosition().x) >= -500){
+                           cout<<"OK";
                            Projectile newProjectile(&projectileTexture,sf::Vector2f(20,70),2);
                            newProjectile.setPosition(sf::Vector2f(enemies[i]->GetPosition()));
                            projectileVector.push_back(newProjectile);
