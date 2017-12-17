@@ -16,12 +16,12 @@ class Item{
 
 private:
     sf::RectangleShape item;
-    string texture;
+    string filename;
 
 public:
     /*FORME CANONIQUE*/
     Item(){}
-    Item(sf::Vector2f size,sf::Vector2f pos);
+    Item(sf::Vector2f size,sf::Vector2f pos,string filename);
 
    // Item(const Item& c);
     ~Item();
