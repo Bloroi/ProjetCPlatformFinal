@@ -13,7 +13,8 @@ PWelcome::PWelcome(sf::RenderWindow* window) : PMenus(window)
     buttons.push_back(new button("buttonOptions",Panel::PSETTINGS,2,sf::Vector2i(0,0),"images/BoutonOptionR.png","images/BoutonOptionV.png"));
     buttons.push_back(new button("buttonAbout",Panel::PABOUT,2,sf::Vector2i(0,150),"images/BoutonAPR.png","images/BoutonAPV.png"));
     //buttons.push_back(new button("buttonSettings",Panel::PMENU,2,sf::Vector2i(0,150),"images/bouton1.png","images/bouton2.png"));
-
+    background.loadFromFile("images/fond-Menu.jpg");
+    image.setTexture(background);
 }
 PWelcome::PWelcome(const PWelcome& b){
 
@@ -52,8 +53,7 @@ void PWelcome::init()
         mouseClicked(buttons[i]);
 
     keyPressedOnce();
-  //  mainWindow->draw(rect);
-
+    mainWindow->draw(image);
     for(int i =0;i<buttons.size();i++)
         mainWindow->draw(buttons.at(i)->getSprite());
 }
