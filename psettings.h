@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <panel.h>
 #include <iostream>
+#include <sstream>
 
 using namespace std;
 
@@ -10,6 +11,10 @@ class PSettings : public Panel
 {
 private:
     int activeP=0;
+    vector<button*>buttonsS;
+    sf::Font arial;
+    ostringstream ssAbout;
+    sf::Text lblAbout;
 public:
     /*FORME CANONIQUE*/
     PSettings(){}
@@ -21,8 +26,7 @@ public:
 
     //Listeners
     int keyPressedOnce();
-    int mouseClicked();
-
+    void modifySound(button *btn);
 
     //Getters
     int getType()const{return 1;}

@@ -8,6 +8,7 @@
 #include <iostream>
 #include "button.h"
 #include <vector>
+#include <cstdlib>
 
 using namespace std;
 
@@ -16,6 +17,8 @@ class PWelcome : public PMenus
 private:
     sf::RectangleShape rect;
     vector<button*>buttons;
+    sf::Texture background;
+    sf::Sprite image;
 public:
     /*FORME CANONIQUE*/
     PWelcome(){}

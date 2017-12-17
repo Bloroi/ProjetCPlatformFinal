@@ -15,6 +15,7 @@ class PMenus : public Panel
 protected:
     sf::View viewMenu;
     sf::Font arial;
+    sf::Texture background;
 
 public:
     /*FORME CANONIQUE*/

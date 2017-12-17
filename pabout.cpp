@@ -6,7 +6,7 @@ PAbout::PAbout(sf::RenderWindow* window) : PMenus(window)
     rect.setSize(sf::Vector2f(30,30));
     rect.setFillColor(sf::Color(250,250,231,255));
 
-    buttons.push_back(new button("buttonBack",Panel::PWELCOME,2,sf::Vector2i(-240,-210),"images/buttonBack.jpg","images/buttonBackA.jpg"));
+    buttons.push_back(new button("buttonBack",Panel::PWELCOME,2,sf::Vector2i(-240,-210),"images/BoutonRetourR.png","images/BoutonRetourV.png"));
 
     //about
     ssAbout<<"Jeu realise par ADRIAENS Alexandre,\n"

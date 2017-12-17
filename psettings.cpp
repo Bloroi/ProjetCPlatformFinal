@@ -2,6 +2,15 @@
 
 PSettings::PSettings(sf::RenderWindow* window) : Panel(window)
 {
+    arial.loadFromFile("styles/arial.ttf");
+    buttonsS.push_back(new button("buttonBack",Panel::PWELCOME,2,sf::Vector2i(-240,-210),"images/BoutonRetourR.png","images/BoutonRetourV.png"));
+    buttonsS.push_back(new button("buttonsSound",Panel::PSETTINGS,2,sf::Vector2i(-50,10),"images/BoutonMusic.png","images/BoutonMusic.png"));
+    ssAbout<<"ON";
+    lblAbout.setCharacterSize(30);
+    lblAbout.setFont(arial);
+    lblAbout.setString(ssAbout.str());
+   // lblAbout.setOrigin(lblAbout.getGlobalBounds().width-(mainWindow->getSize().x/4),lblAbout.getGlobalBounds().height);
+    lblAbout.setPosition(sf::Vector2f(75,-20));
 
 }
 
@@ -20,13 +29,30 @@ PSettings::~PSettings()
 void PSettings::init()
 {
 
-    sf::RectangleShape rect;
-    rect.setPosition(sf::Vector2f(50,200));
-    rect.setSize(sf::Vector2f(30,30));
-    rect.setFillColor(sf::Color::Red);
+    // récupération de la position de la souris dans la fenêtre
+   pixelPos = sf::Mouse::getPosition(*mainWindow);
+
+    // conversion en coordonnées "monde"
+   worldPos = mainWindow->mapPixelToCoords(pixelPos);
+
+    for(int i =0;i<buttonsS.size();i++)
+    {
+        mouseClicked(buttonsS[i]);
+        if(i=1){
+             modifySound(buttonsS[i]);
+        }
+    }
+
+
 
     keyPressedOnce();
-    mainWindow->draw(rect);
+  //  mainWindow->draw(rect);
+
+
+    for(int i =0;i<buttonsS.size();i++)
+        mainWindow->draw(buttonsS.at(i)->getSprite());
+
+    mainWindow->draw(lblAbout);
 }
 
 PSettings::keyPressedOnce(){
@@ -34,3 +60,26 @@ PSettings::keyPressedOnce(){
         setActiveP(Panel::PWELCOME);
     }
 }
+
+void PSettings::modifySound(button *btn){
+    if(btn->isSelected(worldPos.x,worldPos.y))
+    {
+        if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+        {
+
+            if(lblAbout.getString()=="ON"){
+                se->pauseMusic();
+                lblAbout.setString("OFF");
+
+            }
+            else
+            {
+                std::cout<<"ps";
+                se->goMusic("music/level1.wav");
+                lblAbout.setString("ON");
+            }
+
+        }
+    }
+}
+
