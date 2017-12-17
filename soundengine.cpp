@@ -39,7 +39,7 @@ SoundEngine* SoundEngine::getInstance()
 
 SoundEngine::goMusic(string filepath)
 {
-    if(filepath!=currentMusic){
+    if(filepath!=currentMusic || music.getStatus()==sf::Music::Paused){
 
     if(music.getStatus()==sf::Music::Playing)
     {
@@ -58,6 +58,11 @@ SoundEngine::goMusic(string filepath)
     }
 }
 
+SoundEngine::goMusic()
+{
+    music.play();
+}
+
 SoundEngine::pauseMusic()
 {
     music.pause();
@@ -67,6 +72,11 @@ SoundEngine::pauseMusic()
 SoundEngine::stopMusic()
 {
     music.stop();
+}
+
+SoundEngine::setVolume(int vol)
+{
+    music.setVolume(vol);
 }
 
 SoundEngine::playClick()

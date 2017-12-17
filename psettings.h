@@ -1,13 +1,13 @@
 #ifndef PSETTINGS_H
 #define PSETTINGS_H
 #include <SFML/Graphics.hpp>
-#include <panel.h>
+#include "pmenus.h"
 #include <iostream>
 #include <sstream>
 
 using namespace std;
 
-class PSettings : public Panel
+class PSettings : public PMenus
 {
 private:
     int activeP=0;

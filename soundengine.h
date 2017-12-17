@@ -28,8 +28,10 @@ public:
     ~SoundEngine();
     static SoundEngine* getInstance();
     goMusic(string filepath);
+    goMusic();
     pauseMusic();
     stopMusic();
+    setVolume(int vol);
     playClick();
     playPickItem();
     playJump();

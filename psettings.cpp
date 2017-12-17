@@ -1,16 +1,29 @@
 #include "psettings.h"
 
-PSettings::PSettings(sf::RenderWindow* window) : Panel(window)
+PSettings::PSettings(sf::RenderWindow* window) : PMenus(window)
 {
     arial.loadFromFile("styles/arial.ttf");
     buttonsS.push_back(new button("buttonBack",Panel::PWELCOME,2,sf::Vector2i(-240,-210),"images/BoutonRetourR.png","images/BoutonRetourV.png"));
-    buttonsS.push_back(new button("buttonsSound",Panel::PSETTINGS,2,sf::Vector2i(-50,10),"images/BoutonMusic.png","images/BoutonMusic.png"));
+    buttonsS.push_back(new button("buttonsSound",Panel::PSETTINGS,2,sf::Vector2i(-50,-100),"images/BoutonMusic.png","images/BoutonMusic.png"));
     ssAbout<<"ON";
     lblAbout.setCharacterSize(30);
     lblAbout.setFont(arial);
     lblAbout.setString(ssAbout.str());
    // lblAbout.setOrigin(lblAbout.getGlobalBounds().width-(mainWindow->getSize().x/4),lblAbout.getGlobalBounds().height);
-    lblAbout.setPosition(sf::Vector2f(75,-20));
+    lblAbout.setPosition(sf::Vector2f(75,-120));
+
+    if(!backgroundTexture.loadFromFile("images/fond-Option.jpg")){
+        qDebug()<<"Fichier n'existe pas";
+        }else{
+            rBackground.setTexture(&backgroundTexture);
+
+
+            rBackground.setSize(sf::Vector2f(mainWindow->getSize().x,mainWindow->getSize().y));
+            rBackground.setOrigin(sf::Vector2f(mainWindow->getSize().x/2,mainWindow->getSize().y/2));
+
+            rBackground.setPosition(0,0);
+        }
+
 
 }
 
@@ -28,6 +41,11 @@ PSettings::~PSettings()
 
 void PSettings::init()
 {
+
+    aspectRatio = float(mainWindow->getSize().x)/float(mainWindow->getSize().y);
+    mainWindow->setView(viewMenu);
+
+    mainWindow->draw(rBackground);
 
     // récupération de la position de la souris dans la fenêtre
    pixelPos = sf::Mouse::getPosition(*mainWindow);
@@ -68,14 +86,14 @@ void PSettings::modifySound(button *btn){
         {
 
             if(lblAbout.getString()=="ON"){
-                se->pauseMusic();
+                se->setVolume(0);
                 lblAbout.setString("OFF");
 
             }
             else
             {
                 std::cout<<"ps";
-                se->goMusic("music/level1.wav");
+                se->setVolume(100);
                 lblAbout.setString("ON");
             }
 
