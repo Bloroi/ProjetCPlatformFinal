@@ -35,7 +35,9 @@ public:
         PWELCOME,
         PSETTINGS,
         PABOUT,
-        PLEVEL1
+        PLEVEL1,
+        PLEVEL2,
+        PLEVEL3
     };
     virtual void init()=0;
 

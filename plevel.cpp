@@ -3,7 +3,7 @@
 PLevel::PLevel(sf::RenderWindow* window): PGame(window)
 {
 
-    //platforms
+        //platforms
         readPlatform(platforms,"level/platformsLVL1.txt");
 
         //ennemies

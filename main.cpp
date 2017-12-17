@@ -19,6 +19,8 @@
 #include "pwelcome.h"
 #include "psettings.h"
 #include "plevel.h"
+#include "plevel2.h"
+#include "plevel3.h"
 #include "pabout.h"
 #include "soundengine.h"
 
@@ -41,6 +43,8 @@ int main(){
     panels.push_back(new PSettings(&window));
     panels.push_back(new PAbout(&window));
     panels.push_back(new PLevel(&window));
+    panels.push_back(new PLevel2(&window));
+    panels.push_back(new PLevel3(&window));
 
 
     for(int i = 0;i<panels.size();i++)
@@ -69,6 +73,19 @@ int main(){
 
             }
 
+        }
+
+
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::F1)){
+            panels[activePanel]->setActiveP(Panel::PLEVEL1);
+        }
+
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::F2)){
+            panels[activePanel]->setActiveP(Panel::PLEVEL2);
+        }
+
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::F3)){
+            panels[activePanel]->setActiveP(Panel::PLEVEL3);
         }
 
         activePanel=panels[activePanel]->getActiveP();
