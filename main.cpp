@@ -33,6 +33,7 @@ using namespace std;
 int main(){
     sf::RenderWindow window(sf::VideoMode(800,600),"The Legend of HELHa",sf::Style::Close | sf::Style::Resize);
     SoundEngine *se = SoundEngine::getInstance();
+
     se->goMusic("music/mainTheme.wav");
 
     //Ajout des différents panels
@@ -70,7 +71,6 @@ int main(){
             case sf::Event::LostFocus:
                 panels[activePanel]->setActiveP(0);
                 break;
-
             }
 
         }
@@ -89,7 +89,7 @@ int main(){
         }
 
         activePanel=panels[activePanel]->getActiveP();
-        window.clear();
+        window.clear(sf::Color::Black);
         panels[activePanel]->init();
        // window.clear(sf::Color(150,150,150));
         window.display();

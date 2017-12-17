@@ -15,16 +15,17 @@ class PMenus : public Panel
 protected:
     sf::View viewMenu;
     sf::Font arial;
-    sf::Texture background;
+    sf::Texture backgroundTexture;
+    sf::RectangleShape rBackground;
+
 
 public:
     /*FORME CANONIQUE*/
     PMenus(){}
     PMenus(sf::RenderWindow* window);
     PMenus(const PMenus& c);
-    ~PMenus(){};
+    ~PMenus(){}
     PMenus& operator=(const PMenus& e);
-
     void ResizeView();
 };
 
