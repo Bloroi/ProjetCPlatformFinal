@@ -53,7 +53,7 @@ void PWelcome::init()
         mouseClicked(buttons[i]);
 
     keyPressedOnce();
-    mainWindow->draw(image);
+    //mainWindow->draw(image);
     for(int i =0;i<buttons.size();i++)
         mainWindow->draw(buttons.at(i)->getSprite());
 }

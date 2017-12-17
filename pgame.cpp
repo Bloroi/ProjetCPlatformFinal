@@ -16,6 +16,10 @@ PGame::PGame(sf::RenderWindow* window) : Panel(window)
     if(!projectileTexture.loadFromFile("images/Boule_Feu.png")){
 
     }
+
+
+
+
 }
 
 PGame::PGame(const PGame& b){
@@ -86,17 +90,19 @@ PGame::collision()
             /*Gestion collision avec les items*/
             for(Item& item : items) // for each
             {
-                if(item.GetCollider().CheckCollect(player.GetCollider())){
-                    item.setPos(sf::Vector2f(0.00f,0.00f));
-                    player.setKey(true);
-                    se->playPickItem();
+                if(items[0].GetCollider().CheckCollect(player.GetCollider())){
+                    if(item.GetCollider().CheckCollect(player.GetCollider())){
+                        item.setPos(sf::Vector2f(0.00f,0.00f));
+                        player.setKey(true);
+                        se->playPickItem();
+                     }
+                }else{
+                    if(items[1].GetCollider().CheckCollect(player.GetCollider()) && player.getKey()){
 
-                    for(int i=0;i<platforms.size();i++)
-                    {
-                        if(platforms[i].getName() == "door")
-                            platforms.erase(platforms.begin() + i);
                     }
-                 }
+                }
+
+
             }
 
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::E)){

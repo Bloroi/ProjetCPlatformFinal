@@ -1,15 +1,17 @@
 #include "item.h"
 
-Item::Item(sf::Vector2f size,sf::Vector2f pos){
+Item::Item(sf::Vector2f size,sf::Vector2f pos, string filename){
     item.setSize(size);
     //coin.setFillColor(sf::Color::Yellow);
     item.setPosition(pos);
     sf::Texture *texture = new sf::Texture;
-    this->texture="images/sword1.png";
-    if(!texture->loadFromFile("images/sword1.png"))
+
+    if(!texture->loadFromFile(filename))
         qDebug()<<"Fichier n'existe pas";
 
+
     item.setTexture(texture);
+     this->filename = filename;
 }
 /*Item::Item(const Item& c)
 {
