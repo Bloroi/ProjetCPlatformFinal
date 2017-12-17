@@ -10,20 +10,22 @@
 #include "projectile.h"
 #include <SFML/Audio.hpp>
 
-class PLevel2
+using namespace std;
+
+class PLevel2 : public PGame
 {
 public:
     /*FORME CANONIQUE*/
-   /* PLevel2(){}
+    PLevel2(){}
     PLevel2(sf::RenderWindow* window);
-    PLevel2(const PLevel& c);
+    PLevel2(const PLevel2& c);
     ~PLevel2();
-    PLevel& operator=(const PLevel& e);
+    PLevel2& operator=(const PLevel2& e);
 
 
     void init();
     keyPressedOnce();
-    int getType()const{return PLEVEL1;}*/
+    int getType()const{return PLEVEL2;}
 };
 
 #endif // PLEVEL2_H
