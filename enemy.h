@@ -5,6 +5,8 @@
 #include "collider.h"
 #include <vector>
 #include <platform.h>
+#include<sstream>
+#include<string>
 
 using namespace std;
 
@@ -19,12 +21,13 @@ private:
     bool faceRight;
     int pos;
     int health;
+    string name;
     sf::Vector2f velocity;
     sf::Vector2f position;
 public:
     /*FORME CANONIQUE*/
     Enemy(){}
-    Enemy(sf::Texture* texture,sf::Vector2u imageCount,sf::Vector2f size,sf::Vector2f position,float switchTime,float speed,int heath);
+    Enemy(string name,string filename,sf::Vector2u imageCount,sf::Vector2f size,sf::Vector2f position,float switchTime,float speed,int health);
     Enemy(const Enemy& c);
     ~Enemy();
     Enemy& operator=(const Enemy& e);
@@ -37,6 +40,7 @@ public:
     void setHealth(int newHealth){health = newHealth;}
     sf::Vector2f GetPosition(){return body.getPosition();}
     Collider GetCollider(){ return Collider(body);}
+
 
 
 };

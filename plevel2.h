@@ -1,5 +1,5 @@
-#ifndef PLEVEL_H
-#define PLEVEL_H
+#ifndef PLEVEL2_H
+#define PLEVEL2_H
 #include "pgame.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
@@ -10,29 +10,20 @@
 #include "projectile.h"
 #include <SFML/Audio.hpp>
 
-using namespace std;
-
-class PLevel : public PGame
+class PLevel2
 {
-private:
-
-
-
-
 public:
     /*FORME CANONIQUE*/
-    PLevel(){}
-    PLevel(sf::RenderWindow* window);
-    PLevel(const PLevel& c);
-    ~PLevel();
+   /* PLevel2(){}
+    PLevel2(sf::RenderWindow* window);
+    PLevel2(const PLevel& c);
+    ~PLevel2();
     PLevel& operator=(const PLevel& e);
 
 
     void init();
     keyPressedOnce();
-    int getType()const{return PLEVEL1;}
-
+    int getType()const{return PLEVEL1;}*/
 };
 
-
-#endif // PLEVEL_H
+#endif // PLEVEL2_H

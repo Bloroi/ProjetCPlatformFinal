@@ -6,6 +6,8 @@
 #include <button.h>
 #include <vector>
 #include "player.h"
+#include "item.h"
+#include "projectile.h"
 
 using namespace std;
 
@@ -15,6 +17,17 @@ class PGame : public Panel
      sf::Texture playerTexture;
      sf::View viewGame;
      Player player;
+
+     /*TEXTURE*/
+     sf::Texture projectileTexture;
+     /*PROJECTILE*/
+     std::vector<Projectile> projectileVector;
+     std::vector<Projectile> projectileVectorEnemy;
+     std::vector<Enemy*> enemies;
+     std::vector<Platform> platforms;
+     std::vector<Item> items;
+     float deltaTime = 0.0f;
+     sf::Clock clock;
     public:
      /*FORME CANONIQUE*/
      PGame(){}
@@ -23,6 +36,10 @@ class PGame : public Panel
      virtual ~PGame();
      PGame& operator=(const PGame& e);
 
+     collision();
+     camera();
+     drawAll();
+     void initDeltaTime();
 
      void ResizeView();
 };

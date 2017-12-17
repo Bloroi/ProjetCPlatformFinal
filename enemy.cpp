@@ -1,8 +1,17 @@
 #include "enemy.h"
 
-Enemy::Enemy(sf::Texture* texture,sf::Vector2u imageCount,sf::Vector2f size,sf::Vector2f position,float switchTime,float speed, int health) :
-    animation(texture,imageCount,switchTime)
-{
+Enemy::Enemy(string name,string filename,sf::Vector2u imageCount,sf::Vector2f size,sf::Vector2f position,float switchTime,float speed, int health)
+   {
+
+    cout<<name<<"|"<<filename<<"|"<<imageCount.x<<"|"<<imageCount.y<<"|"<<size.x<<"|"<<position.x<<"|"<<position.y<<"|"<<switchTime<<"|"<<speed<<"|"<<health<<endl;
+    this->name = name;
+
+    sf::Texture *texture = new sf::Texture;
+    if(!texture->loadFromFile(filename))
+        qDebug()<<"Fichier n'existe pas";
+
+    texture->setSmooth(true);
+
     this->speed = speed;
     this->health = health;
     row = 0;
@@ -14,10 +23,12 @@ Enemy::Enemy(sf::Texture* texture,sf::Vector2u imageCount,sf::Vector2f size,sf::
     body.setTexture(texture);
     pos =0;
     //body.setFillColor(sf::Color::Red);
+    animation = Animation(texture,imageCount,switchTime);
 }
 
 Enemy::Enemy(const Enemy& b){
 
+    this->name = b.name;
     this->speed = b.speed;
     this->row = b.row;
     this->faceRight = b.faceRight;

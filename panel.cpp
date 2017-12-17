@@ -37,7 +37,7 @@ Panel::mouseClicked(button *btn){
         {
             se->playClick();
             setActiveP(btn->getTodo());
-            if(btn->getTodo()==3)
+            if(btn->getTodo()==PLEVEL1)
             {
                 se->goMusic("music/level1.wav");
             }
