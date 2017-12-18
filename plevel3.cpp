@@ -53,6 +53,7 @@ PLevel3::~PLevel3()
  * Sorte de main pour une classe*/
 void PLevel3::init()
 {
+    mainWindow->clear(sf::Color(99,00,00));
     initDeltaTime();
 
     /*Gestion collision avec les items*/

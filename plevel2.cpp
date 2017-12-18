@@ -55,6 +55,7 @@ PLevel2::~PLevel2()
  * Sorte de main pour une classe*/
 void PLevel2::init()
 {
+    mainWindow->clear(sf::Color(33,19,00));
     initDeltaTime();
 
     /*Gestion collision avec les items*/
