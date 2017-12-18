@@ -19,6 +19,14 @@ SoundEngine::SoundEngine()
        }
       Sjump.setBuffer(SBjump);
 
+      if(!SBcongrats.loadFromFile("music/congrats.wav")){
+        }
+       Scongrats.setBuffer(SBcongrats);
+
+       if(!SBouch.loadFromFile("music/ouch.wav")){
+         }
+        Souch.setBuffer(SBouch);
+
 
 
 }
@@ -90,6 +98,15 @@ SoundEngine::playPickItem()
 SoundEngine::playJump()
 {
     Sjump.play();
+}
+
+SoundEngine::playCongrats()
+{
+    Scongrats.play();
+}
+SoundEngine::playOuch()
+{
+    Souch.play();
 }
 
 

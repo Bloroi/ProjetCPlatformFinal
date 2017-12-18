@@ -19,9 +19,13 @@ private:
     sf::SoundBuffer SBpickItem;
     sf::SoundBuffer SBclick;
     sf::SoundBuffer SBjump;
+    sf::SoundBuffer SBcongrats;
+    sf::SoundBuffer SBouch;
     sf::Sound SpickItem;
     sf::Sound Sclick;
     sf::Sound Sjump;
+    sf::Sound Scongrats;
+    sf::Sound Souch;
 
 public:
     SoundEngine(const SoundEngine &s);
@@ -35,6 +39,8 @@ public:
     playClick();
     playPickItem();
     playJump();
+    playCongrats();
+    playOuch();
 
 
 };

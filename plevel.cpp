@@ -65,6 +65,7 @@ void PLevel::init()
         }else{
             if(items[1].GetCollider().CheckCollect(player.GetCollider()) && player.getKey()){
                    setActiveP(PLEVEL2);
+                   se->goMusic("music/level2.wav");
 
             }
         }

@@ -18,6 +18,19 @@ PAbout::PAbout(sf::RenderWindow* window) : PMenus(window)
     lblAbout.setString(ssAbout.str());
    // lblAbout.setOrigin(lblAbout.getGlobalBounds().width-(mainWindow->getSize().x/4),lblAbout.getGlobalBounds().height);
     lblAbout.setPosition(sf::Vector2f(-250,-50));
+
+    if(!backgroundTexture.loadFromFile("images/fond-book.png")){
+        qDebug()<<"Fichier n'existe pas";
+        }else{
+            rBackground.setTexture(&backgroundTexture);
+
+
+            rBackground.setSize(sf::Vector2f(mainWindow->getSize().x,mainWindow->getSize().y));
+            rBackground.setOrigin(sf::Vector2f(mainWindow->getSize().x/2,mainWindow->getSize().y/2));
+
+            rBackground.setPosition(0,0);
+        }
+
 }
 
 PAbout::PAbout(const PAbout& b){
@@ -55,6 +68,7 @@ void PAbout::init()
     aspectRatio = float(mainWindow->getSize().x)/float(mainWindow->getSize().y);
     mainWindow->setView(viewMenu);
 
+    mainWindow->draw(rBackground);
 
 
 

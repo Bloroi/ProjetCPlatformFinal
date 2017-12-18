@@ -113,6 +113,7 @@ PGame::collision()
             for(int i=0; i<enemies.size();i++){
                if(player.GetCollider().CheckCollision(enemies[i]->GetCollider(),direction,1.00f)){
                     player.setPosition(sf::Vector2f(206.0f,206.0f));
+                    se->playOuch();
                }
                if(enemies[i]->getHealth() <= 0){
                     enemies.erase(enemies.begin()+i);
