@@ -39,6 +39,11 @@ SoundEngine::SoundEngine(const SoundEngine &s)
 
 }
 
+SoundEngine::~SoundEngine()
+{
+
+}
+
 /**
  * @brief SoundEngine::getInstance Méthode envoyant l'instance si demandé , permettant de créer qu'un seul objet
  * de ce type

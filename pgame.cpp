@@ -48,7 +48,16 @@ PGame& PGame::operator=(const PGame& b){
 }
 
 PGame::~PGame()
-{}
+{
+    for(int i =0;i<enemies.size();i++){
+            delete(enemies.at(i));
+            enemies.at(i) =0;
+        }
+    enemies.clear();
+    platforms.clear();
+    items.clear();
+
+}
 
 /**
  * @brief PGame::collision Méthode appellée par les sous classe pour compléter le init() pour les collisions

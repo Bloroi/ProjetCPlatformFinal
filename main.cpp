@@ -35,7 +35,7 @@ int main(){
 
     se->goMusic("music/mainTheme.ogg");
 
-    //Ajout des différents panels
+    //Ajout des différents panels avec une RenderWindow par référence (obligatoire car pas copiable)
     int activePanel=0;
     vector<Panel*> panels;
     panels.push_back(new PWelcome(&window));

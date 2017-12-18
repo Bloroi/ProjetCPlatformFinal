@@ -22,6 +22,8 @@ class PGame : public Panel
      /*PROJECTILE*/
      std::vector<Projectile> projectileVector;
      std::vector<Projectile> projectileVectorEnemy;
+     // Ce vecteur est rempli de pointeur de ennemis car une fois battu les ennemis sont supprimés
+     //AGREGATION INTERNE PAR POINTEUR
      std::vector<Enemy*> enemies;
      std::vector<Platform> platforms;
      std::vector<Item> items;
