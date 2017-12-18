@@ -1,5 +1,12 @@
 #include "platform.h"
 
+/**
+ * @brief Platform::Platform Classe permettant de créer des plateformes
+ * @param name nom de la plateforme
+ * @param filename chemin d'accès de la texture de la plateforme
+ * @param size taile de la plateforme
+ * @param position position de la plateforme
+ */
 Platform::Platform(string name,string filename, sf::Vector2f size, sf::Vector2f position )
 {
     this->name = name;

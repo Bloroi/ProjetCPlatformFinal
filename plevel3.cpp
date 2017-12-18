@@ -1,6 +1,9 @@
 #include "plevel3.h"
 
-
+/**
+ * @brief PLevel3::PLevel3 Classe Panel permettant d'afficher le niveau 3
+ * @param window
+ */
 PLevel3::PLevel3(sf::RenderWindow* window): PGame(window)
 {
         //platforms
@@ -69,6 +72,9 @@ void PLevel3::init()
     keyPressedOnce();
 }
 
+/**
+ * @brief PLevel3::keyPressedOnce Méthode permettant de vérifier si une touche précise est appuyée pour un événement
+ */
 PLevel3::keyPressedOnce(){
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
         setActiveP(Panel::PWELCOME);

@@ -4,7 +4,11 @@
 using namespace std;
 
 
-/** Cette méthode permet de lire dans un fichier txt les informations sur les plateformes**/
+/**
+ * @brief readPlatform Cette méthode permet de lire dans un fichier txt les informations sur les plateformes
+ * @param platforms vecteur de plateformes
+ * @param filepath chemin d'accès pour le fichier txt contenant les plateformes
+ */
 void readPlatform(vector<Platform>& platforms,string filepath){
     string a,b,c,d,e,f,g;
     float c1,d1,e1,f1;
@@ -21,7 +25,7 @@ void readPlatform(vector<Platform>& platforms,string filepath){
 
      while (a!=""){
 
-        //std::cout<<a<<"|"<<b<<"|"<<c<<"|"<<d<<"|"<<e<<"|"<<f<<endl;
+        std::cout<<a<<"|"<<b<<"|"<<c<<"|"<<d<<"|"<<e<<"|"<<f<<endl;
 
         c1 = std::stof(c);
         d1 = std::stof(d);
@@ -39,7 +43,11 @@ void readPlatform(vector<Platform>& platforms,string filepath){
      }
 }
 
-
+/**
+ * @brief readennemy Cette méthode permet de lire dans un fichier txt les informations sur les ennemis
+ * @param enemies vecteur d'enemy
+ * @param filepath chemin d'accès pour le fichier txt contenant les ennemis
+ */
 void readennemy(vector<Enemy*>& enemies,string filepath)
 {
     std::cout<<"test1"<<endl;
@@ -61,13 +69,12 @@ void readennemy(vector<Enemy*>& enemies,string filepath)
     getline(infile,j,',');
     getline(infile,k,';');
     getline(infile,l,'\n');
-  std::cout<<"test2"<<filepath<<endl;
+
 
      while (a!=""){
 
-         std::cout<<"test3"<<endl;
 
-        //std::cout<<a<<"|"<<b<<"|"<<c<<"|"<<d<<"|"<<e<<"|"<<f<<"|"<<g<<"|"<<h<<"|"<<i<<"|"<<j<<"|"<<k<<"|"<<l<<endl;
+        std::cout<<a<<"|"<<b<<"|"<<c<<"|"<<d<<"|"<<e<<"|"<<f<<"|"<<g<<"|"<<h<<"|"<<i<<"|"<<j<<"|"<<k<<"|"<<l<<endl;
 
         c1 = std::stoi(c);
         d1 = std::stoi(d);
@@ -79,7 +86,6 @@ void readennemy(vector<Enemy*>& enemies,string filepath)
         j1  = std::stof(j);
         k1 = std::stoi(k);
 
-        std::cout<<"methode"<<a<<"|"<<b<<"|"<<c<<"|"<<d<<"|"<<e<<"|"<<f<<"|"<<g<<"|"<<h<<"|"<<i<<"|"<<j<<"|"<<k<<"|"<<l<<endl;
         enemies.push_back(new Enemy(a,b,sf::Vector2u(c1,d1),sf::Vector2f(e1,f1),sf::Vector2f(g1,h1),i1,j1,k1));
 
         getline(infile,a,',');

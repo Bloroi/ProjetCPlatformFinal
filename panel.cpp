@@ -3,6 +3,10 @@
 int Panel::activeP =0;
 int Panel::activeLevel=3;
 
+/**
+ * @brief Panel::Panel SuperClasse abstraite de Panel
+ * @param window
+ */
 Panel::Panel(sf::RenderWindow* window)
 {
     mainWindow = window;

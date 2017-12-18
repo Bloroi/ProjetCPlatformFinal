@@ -1,6 +1,9 @@
 #include "plevel2.h"
 
-
+/**
+ * @brief PLevel2::PLevel2 Classe Panel affichant le niveau 2
+ * @param window
+ */
 PLevel2::PLevel2(sf::RenderWindow* window): PGame(window)
 {
         //platforms
@@ -83,7 +86,9 @@ void PLevel2::init()
 }
 
 
-
+/**
+ * @brief PLevel2::keyPressedOnce Méthode permettant de vérifier si une touche précise est appuyée pour un événement
+ */
 PLevel2::keyPressedOnce(){
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
         setActiveP(Panel::PWELCOME);

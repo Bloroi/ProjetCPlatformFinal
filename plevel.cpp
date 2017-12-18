@@ -1,5 +1,9 @@
 #include "plevel.h"
 
+/**
+ * @brief PLevel::PLevel Classe panel affichant le premier niveau
+ * @param window
+ */
 PLevel::PLevel(sf::RenderWindow* window): PGame(window)
 {
 
@@ -83,6 +87,9 @@ void PLevel::init()
     keyPressedOnce();
 }
 
+/**
+ * @brief PLevel::keyPressedOnce Méthode permettant de vérifier si une touche précise est appuyée pour un événement
+ */
 PLevel::keyPressedOnce(){
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
         setActiveP(Panel::PWELCOME);

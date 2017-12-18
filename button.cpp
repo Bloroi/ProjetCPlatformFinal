@@ -1,5 +1,14 @@
 #include "button.h"
 
+/**
+ * @brief button::button Classe qui permet de créer des boutons dans les menus
+ * @param name nom du bouton
+ * @param todo la page qu'il doit afficher
+ * @param size taille du bouton
+ * @param pos position du bouton
+ * @param path première image du bouton
+ * @param pathSelected deuxième image du bouton
+ */
 button::button(string name,int todo,float size,sf::Vector2i pos,string path,string pathSelected)
 {
     if(path!="0")
@@ -29,6 +38,7 @@ button::button(string name,int todo,float size,sf::Vector2i pos,string path,stri
     this->setPosition(pos.x,pos.y);
 
 }
+
 button::button(const button& b){
 
     this->textureNormal= b.textureNormal;

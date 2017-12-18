@@ -6,7 +6,18 @@ Player::Player() :
 
 }
 
-
+/**
+ * @brief Player::Player Cette classe permet de créer l'objet Player
+ * @param texture la texture du player
+ * @param imageCount le nombre d'image d'animation
+ * @param switchTime combien de d'image par sec
+ * @param speed vitesse du player
+ * @param jumpHeight hauteur du saut du player
+ * @param score score du player
+ * @param health vie du player
+ * @param key objet item key dans son inventaire
+ * @param key2 objet item key2 dans son inventaire
+ */
 Player::Player(sf::Texture* texture,sf::Vector2u imageCount,float switchTime,float speed,float jumpHeight, int score, int health, bool key,bool key2) :
     animation(texture,imageCount,switchTime)
 {
@@ -60,10 +71,6 @@ Player::~Player(){
 
 }
 
-void Player::setcolordamage(sf::Color color)
-{
-    body.setFillColor(color);
-}
 
 /**Cette méthode agit si il y a collision avec une plateforme empêchant de bouger le personnage dans la direction de
  cette plateforme**/

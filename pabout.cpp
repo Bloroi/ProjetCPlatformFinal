@@ -1,11 +1,15 @@
 #include "pabout.h"
 
+/**
+ * @brief PAbout::PAbout Panel affichant les "a propos" du jeu
+ * @param window
+ */
 PAbout::PAbout(sf::RenderWindow* window) : PMenus(window)
 {
 
     buttons.push_back(new button("buttonBack",Panel::PWELCOME,2,sf::Vector2i(-240,-210),"images/BoutonRetourR.png","images/BoutonRetourV.png"));
 
-    //about
+    //About
     ssAbout<<"MERCI D'AVOIR JOUE A NOTRE JEU !!\n\n"
             <<"Jeu realise par ADRIAENS Alexandre,\n"
           <<"CARLIER Logan, SCIOT Celine.\n"
@@ -14,7 +18,6 @@ PAbout::PAbout(sf::RenderWindow* window) : PMenus(window)
     lblAbout.setCharacterSize(30);
     lblAbout.setFont(arial);
     lblAbout.setString(ssAbout.str());
-   // lblAbout.setOrigin(lblAbout.getGlobalBounds().width-(mainWindow->getSize().x/4),lblAbout.getGlobalBounds().height);
     lblAbout.setPosition(sf::Vector2f(-270,-150));
 
     if(!backgroundTexture.loadFromFile("images/fond-book.png")){

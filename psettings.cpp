@@ -1,5 +1,9 @@
 #include "psettings.h"
 
+/**
+ * @brief PSettings::PSettings Classe Panel permettant d'afficher les options du jeu
+ * @param window
+ */
 PSettings::PSettings(sf::RenderWindow* window) : PMenus(window)
 {
     arial.loadFromFile("styles/arial.ttf");
@@ -38,7 +42,8 @@ PSettings& PSettings::operator=(const PSettings& b){
 
 PSettings::~PSettings()
 {}
-
+/*Méthode qui est appelée tout le temps dans le jeu.
+ * Sorte de main pour une classe*/
 void PSettings::init()
 {
 
@@ -64,7 +69,7 @@ void PSettings::init()
 
 
     keyPressedOnce();
-  //  mainWindow->draw(rect);
+
 
 
     for(int i =0;i<buttonsS.size();i++)
@@ -72,13 +77,18 @@ void PSettings::init()
 
     mainWindow->draw(lblAbout);
 }
-
+/**
+ * @brief PSettings::keyPressedOnce Méthode permettant de vérifier si une touche précise est appuyée pour un événement
+ */
 PSettings::keyPressedOnce(){
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
         setActiveP(Panel::PWELCOME);
     }
 }
-
+/**
+ * @brief PSettings::modifySound méthode permettant de changer le volume du jeu
+ * @param btn le bouton envoyé en paramètre
+ */
 void PSettings::modifySound(button *btn){
     if(btn->isSelected(worldPos.x,worldPos.y))
     {

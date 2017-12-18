@@ -1,5 +1,9 @@
 #include "pwelcome.h"
 
+/**
+ * @brief PWelcome::PWelcome Classe Panel permettant d'afficher le menu principal
+ * @param window
+ */
 PWelcome::PWelcome(sf::RenderWindow* window) : PMenus(window)
 {
 
@@ -40,7 +44,8 @@ PWelcome& PWelcome::operator=(const PWelcome& b){
 
 PWelcome::~PWelcome()
 {}
-
+/*Méthode qui est appelée tout le temps dans le jeu.
+ * Sorte de main pour une classe*/
 void PWelcome::init()
 {
 
@@ -66,7 +71,9 @@ void PWelcome::init()
 
 
 }
-
+/**
+ * @brief PWelcome::keyPressedOnce Méthode permettant de vérifier si une touche précise est appuyée pour un événement
+ */
 PWelcome::keyPressedOnce(){
 
 }

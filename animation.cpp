@@ -1,7 +1,12 @@
 #include "animation.h"
 
 Animation::Animation(){}
-
+/**
+ * @brief Animation::Animation
+ * @param texture est la texture
+ * @param imageCount est le nombre d'image par seconde
+ * @param switchTime est la fréquence qu'il doit changer
+ */
 Animation::Animation(sf::Texture* texture,sf::Vector2u imageCount,float switchTime)
 {
     this->imageCount = imageCount;
@@ -12,6 +17,7 @@ Animation::Animation(sf::Texture* texture,sf::Vector2u imageCount,float switchTi
     uvRect.width = texture->getSize().x / float(imageCount.x);
     uvRect.height = texture->getSize().y / float(imageCount.y);
 }
+
 Animation::Animation(const Animation& an){
     this->imageCount = an.imageCount;
     this->currentImage=an.currentImage;

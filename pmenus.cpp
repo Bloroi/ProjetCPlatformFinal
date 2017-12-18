@@ -1,5 +1,9 @@
 #include "pmenus.h"
 
+/**
+ * @brief PMenus::PMenus superclasse des panels psettings pwelcome et pabout
+ * @param window
+ */
 PMenus::PMenus(sf::RenderWindow* window) : Panel(window)
 {
     this->viewMenu = sf::View(sf::Vector2f(0.0f,0.0f),sf::Vector2f(VIEW_MENU,VIEW_MENU));
@@ -23,6 +27,9 @@ PMenus& PMenus::operator=(const PMenus& b){
     return *this;
 }
 
+/**
+ * @brief PMenus::ResizeView Méthode permettant de changer la vue en fonction de la grandeur de la fenêtre
+ */
 void PMenus::ResizeView()
 {
     float aspectRatio = float(mainWindow->getSize().x)/ float(mainWindow->getSize().y);

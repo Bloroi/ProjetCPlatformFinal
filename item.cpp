@@ -1,5 +1,11 @@
 #include "item.h"
 
+/**
+ * @brief Item::Item classe qui permet de créer des objets items
+ * @param size taille de l'item
+ * @param pos position de l'item
+ * @param filename chemin d'accès de la texture de l'item
+ */
 Item::Item(sf::Vector2f size,sf::Vector2f pos, string filename){
     item.setSize(size);
     //coin.setFillColor(sf::Color::Yellow);
@@ -32,9 +38,14 @@ void Item::Draw(sf::RenderWindow &window){
     window.draw(item);
 }
 
+/**
+ * @brief Item::getGlobalBounds méthode permettant de savoir les bors de l'item
+ * @return  les bords de l'item en sf::FloatRect
+ */
 sf::FloatRect Item::getGlobalBounds(){
     return item.getGlobalBounds();
 }
+
 
 void Item::setPos(sf::Vector2f newPos){
     item.setPosition(newPos);

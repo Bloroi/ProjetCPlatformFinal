@@ -1,5 +1,16 @@
 #include "enemy.h"
 
+/**
+ * @brief Enemy::Enemy Cette classe permet de créer des objets ennemis
+ * @param name nom de l'ennemi
+ * @param filename chemin d'accès du fichier
+ * @param imageCount nombre d'image par seconde pour l'animation
+ * @param size taille de l'ennemi
+ * @param position position de l'ennemi
+ * @param switchTime
+ * @param speed vitesse de l'ennemi
+ * @param health vie de l'ennemi
+ */
 Enemy::Enemy(string name,string filename,sf::Vector2u imageCount,sf::Vector2f size,sf::Vector2f position,float switchTime,float speed, int health)
    {
 
@@ -58,6 +69,10 @@ Enemy::~Enemy(){
 
 }
 
+/**
+ * @brief Enemy::OnCollision Méthode qui empêche l'ennemi d'avancer dans un mur
+ * @param direction direction où regarde l'ennemi
+ */
 void Enemy::OnCollision(sf::Vector2f direction)
 {
     if(direction.x < 0.0f)
@@ -129,10 +144,6 @@ if(velocity.y==0){
             }
         }
 
-
-
-         // velocity.x -=speed ;
-
      }
       else
      {
@@ -165,7 +176,6 @@ if(velocity.y==0){
                 pos=0;
             }
         }
-          //velocity.x +=speed ;
 
      }
     if(pos==40000){

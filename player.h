@@ -41,7 +41,6 @@ public:
     bool GetFaceRight(){return faceRight;}
     void setPosition(sf::Vector2f position){ body.setPosition(position);}
     Collider GetCollider(){ return Collider(body);}
-    void setcolordamage(sf::Color);
     int getScore()const{return score;}
     int getHealth()const{return health;}
     void setScore(int newScore){score = newScore;}

@@ -1,8 +1,6 @@
 #include "collider.h"
 
-/*Collider::Collider()
-{
-}*/
+
 Collider::Collider(sf::RectangleShape& body):body(body)
 {
 }

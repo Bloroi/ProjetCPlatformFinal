@@ -1,5 +1,9 @@
 #include "pgame.h"
 
+/**
+ * @brief PGame::PGame superclasse des différents panel niveaux
+ * @param window
+ */
 PGame::PGame(sf::RenderWindow* window) : Panel(window)
 {
 
@@ -46,6 +50,9 @@ PGame& PGame::operator=(const PGame& b){
 PGame::~PGame()
 {}
 
+/**
+ * @brief PGame::collision Méthode appellée par les sous classe pour compléter le init() pour les collisions
+ */
 PGame::collision()
 {
 
@@ -56,14 +63,8 @@ PGame::collision()
 
                 enemies[i]->Update(deltaTime,platforms);
                 if(enemies[i]->GetCollider().CheckCollect(player.GetCollider())){
-                    //player.setPosition(sf::Vector2f(0.00f,0.00f));
-                    //player.OnCollision(direction);
-                    player.setcolordamage(sf::Color::Red);
                     player.setPosition(sf::Vector2f(206.0f,206.0f));
                  }
-                else{
-                    player.setcolordamage(sf::Color::White);
-                }
             }
 
 
@@ -152,6 +153,9 @@ PGame::collision()
             }
 }
 
+/**
+ * @brief PGame::camera Méthode appellée par les sous classe pour compléter le init() pour la caméra view
+ */
 PGame::camera()
 {
     aspectRatio = float(mainWindow->getSize().x)/float(mainWindow->getSize().y);
@@ -172,6 +176,9 @@ PGame::camera()
          mainWindow->setView(viewGame);
 }
 
+/**
+ * @brief PGame::drawAll Méthode appellée par les sous classe pour compléter le init() pour dessiner les divers éléments dans la window
+ */
 PGame::drawAll()
 {
     player.Draw(*mainWindow);
@@ -202,6 +209,9 @@ void PGame::initDeltaTime(){
         }
 }
 
+/**
+ * @brief PGame::ResizeView Cette méthode permet de mettre la view à la bonne taille si la fenêtre change de taille
+ */
 void PGame::ResizeView()
 {
     float aspectRatio = float(mainWindow->getSize().x)/ float(mainWindow->getSize().y);

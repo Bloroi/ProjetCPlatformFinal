@@ -26,7 +26,6 @@
 
 
 using namespace std;
-/*ESSAI PUSH*/
 
 
 
@@ -38,7 +37,6 @@ int main(){
 
     //Ajout des différents panels
     int activePanel=0;
-    //Ajout des panels
     vector<Panel*> panels;
     panels.push_back(new PWelcome(&window));
     panels.push_back(new PSettings(&window));
