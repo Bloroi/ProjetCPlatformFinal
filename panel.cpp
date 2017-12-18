@@ -1,6 +1,7 @@
 #include "panel.h"
 
 int Panel::activeP =0;
+int Panel::activeLevel=3;
 
 Panel::Panel(sf::RenderWindow* window)
 {
@@ -36,15 +37,32 @@ Panel::mouseClicked(button *btn){
         if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
         {
             se->playClick();
-            setActiveP(btn->getTodo());
-            if(btn->getTodo()==PLEVEL1)
+            if(btn->getName()!="buttonPlay")
             {
-                se->goMusic("music/level1.ogg");
+                setActiveP(btn->getTodo());
+            }else{
+                setActiveP(getActiveLevel());
+
+                if(getActiveLevel()==PLEVEL1)
+                {
+                    se->goMusic("music/level1.ogg");
+                }
+                 else if(getActiveLevel()==PLEVEL2)
+                {
+                     se->goMusic("music/level2.ogg");
+                }
+                else if(getActiveLevel()==PLEVEL2)
+                {
+                     se->goMusic("music/level3.ogg");
+                }
             }
-        }
+
+
+
     }else{
         btn->changeTexture(false);
     }
+}
 }
 
 

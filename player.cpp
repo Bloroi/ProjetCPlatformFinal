@@ -13,7 +13,7 @@ Player::Player(sf::Texture* texture,sf::Vector2u imageCount,float switchTime,flo
     this->speed = speed;
     this->jumpHeight = jumpHeight;
     this->health = health;
-    this->score = score;
+    this->score =score;
     this->key = key;
     this->key2 = key2;
 
@@ -36,6 +36,7 @@ Player::Player(const Player& b){
     this->row = 0;
     this->faceRight = true;
     this->body= b.body;
+    this->score = 0;
 }
 
 Player& Player::operator=(const Player& b){

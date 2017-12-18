@@ -12,7 +12,7 @@ PGame::PGame(sf::RenderWindow* window) : Panel(window)
     playerTexture.setSmooth(true);
 
     this->player = Player(&playerTexture, sf::Vector2u(4,3),0.1f,350.0f,500.0f);
-
+    this->player.setScore(0);
     if(!projectileTexture.loadFromFile("images/Boule_Feu.png")){
 
     }
@@ -117,6 +117,7 @@ PGame::collision()
                }
                if(enemies[i]->getHealth() <= 0){
                     enemies.erase(enemies.begin()+i);
+                    player.setScore(player.getScore() + 100);
                }
             }
 
@@ -137,7 +138,7 @@ PGame::collision()
                     if(projectileVector[i].GetCollider().CheckCollision(enemies[j]->GetCollider(),direction,0.10f)){
                         enemies[j]->setHealth(enemies[j]->getHealth() - 1);
                         projectileVector.clear();
-                        player.setScore(player.getScore() + 100);
+
                 }
 
 

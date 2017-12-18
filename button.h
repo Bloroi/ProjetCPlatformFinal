@@ -35,6 +35,7 @@ public:
     sf::Sprite getSprite()const{return sprite;}
     sf::Vector2f getPosition()const{return sprite.getPosition();}
     int getTodo()const{return todo;}
+    string getName(){return name;}
     //void drawTo(sf::RenderWindow & window){window.draw(sprite);}
 };
 

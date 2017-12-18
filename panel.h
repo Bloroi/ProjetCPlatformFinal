@@ -4,13 +4,16 @@
 #include <SFML/Audio.hpp>
 #include <button.h>
 #include <soundengine.h>
+#include "player.h"
 
 
 class Panel
 {
 private:
     static int activeP;
+    static int activeLevel;
 protected:
+    Player player;
     sf::RenderWindow* mainWindow;
     sf::Vector2i pixelPos;
     sf::Vector2f worldPos;
@@ -53,6 +56,8 @@ public:
     //sf::RenderWindow& getWindow2() const{return *mainWindow;}
     int getActiveP(){return activeP; }
     void setActiveP(int a){activeP = a;}
+    int getActiveLevel(){return activeLevel; }
+    void setActiveLevel(int l){activeLevel = l;}
 };
 
 #endif // PANEL_H

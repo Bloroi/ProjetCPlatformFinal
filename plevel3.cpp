@@ -53,15 +53,14 @@ void PLevel3::init()
     initDeltaTime();
 
     /*Gestion collision avec les items*/
-    for(Item& item : items) // for each
-    {
+      if(items[0].GetCollider().CheckCollect(player.GetCollider())){
+            se->playCongrats();
+            se->goMusic("music/mainTheme.ogg");
+            setActiveP(PABOUT);
+      }
 
-            if(items[0].GetCollider().CheckCollect(player.GetCollider()) && player.getKey2() && player.getKey()){
-                   setActiveP(PABOUT);
-            }
 
 
-    }
 
     collision();
     camera();

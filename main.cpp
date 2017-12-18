@@ -79,16 +79,19 @@ int main(){
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::F1)){
             panels[activePanel]->setActiveP(Panel::PLEVEL1);
              se->goMusic("music/level1.ogg");
+             panels[activePanel]->setActiveLevel(3);
         }
 
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::F2)){
             panels[activePanel]->setActiveP(Panel::PLEVEL2);
              se->goMusic("music/level2.ogg");
+             panels[activePanel]->setActiveLevel(4);
         }
 
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::F3)){
             panels[activePanel]->setActiveP(Panel::PLEVEL3);
              se->goMusic("music/level3.ogg");
+             panels[activePanel]->setActiveLevel(5);
         }
 
         activePanel=panels[activePanel]->getActiveP();

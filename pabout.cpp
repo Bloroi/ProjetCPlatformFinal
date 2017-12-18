@@ -6,7 +6,7 @@ PAbout::PAbout(sf::RenderWindow* window) : PMenus(window)
     buttons.push_back(new button("buttonBack",Panel::PWELCOME,2,sf::Vector2i(-240,-210),"images/BoutonRetourR.png","images/BoutonRetourV.png"));
 
     //about
-    ssAbout<<"MERCI D'AVOIR JOUER A NOTRE JEU !!\n\n"
+    ssAbout<<"MERCI D'AVOIR JOUE A NOTRE JEU !!\n\n"
             <<"Jeu realise par ADRIAENS Alexandre,\n"
           <<"CARLIER Logan, SCIOT Celine.\n"
           <<"Etudiants de la HELHa Campus Mons,\n"
@@ -15,7 +15,7 @@ PAbout::PAbout(sf::RenderWindow* window) : PMenus(window)
     lblAbout.setFont(arial);
     lblAbout.setString(ssAbout.str());
    // lblAbout.setOrigin(lblAbout.getGlobalBounds().width-(mainWindow->getSize().x/4),lblAbout.getGlobalBounds().height);
-    lblAbout.setPosition(sf::Vector2f(-280,-130));
+    lblAbout.setPosition(sf::Vector2f(-270,-150));
 
     if(!backgroundTexture.loadFromFile("images/fond-book.png")){
         qDebug()<<"Fichier n'existe pas";
@@ -84,7 +84,6 @@ void PAbout::init()
 
    for(int i =0;i<buttons.size();i++)
        mainWindow->draw(buttons.at(i)->getSprite());
-
 
    mainWindow->draw(lblAbout);
 }

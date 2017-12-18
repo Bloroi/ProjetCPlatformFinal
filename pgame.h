@@ -16,7 +16,6 @@ class PGame : public Panel
     protected:
      sf::Texture playerTexture;
      sf::View viewGame;
-     Player player;
 
      /*TEXTURE*/
      sf::Texture projectileTexture;
