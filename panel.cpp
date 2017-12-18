@@ -39,7 +39,7 @@ Panel::mouseClicked(button *btn){
             setActiveP(btn->getTodo());
             if(btn->getTodo()==PLEVEL1)
             {
-                se->goMusic("music/level1.wav");
+                se->goMusic("music/level1.ogg");
             }
         }
     }else{

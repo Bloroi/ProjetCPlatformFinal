@@ -34,7 +34,7 @@ int main(){
     sf::RenderWindow window(sf::VideoMode(800,600),"The Legend of HELHa",sf::Style::Close | sf::Style::Resize);
     SoundEngine *se = SoundEngine::getInstance();
 
-    se->goMusic("music/mainTheme.wav");
+    se->goMusic("music/mainTheme.ogg");
 
     //Ajout des différents panels
     int activePanel=0;
@@ -78,17 +78,17 @@ int main(){
 
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::F1)){
             panels[activePanel]->setActiveP(Panel::PLEVEL1);
-             se->goMusic("music/level1.wav");
+             se->goMusic("music/level1.ogg");
         }
 
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::F2)){
             panels[activePanel]->setActiveP(Panel::PLEVEL2);
-             se->goMusic("music/level2.wav");
+             se->goMusic("music/level2.ogg");
         }
 
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::F3)){
             panels[activePanel]->setActiveP(Panel::PLEVEL3);
-             se->goMusic("music/level3.wav");
+             se->goMusic("music/level3.ogg");
         }
 
         activePanel=panels[activePanel]->getActiveP();
