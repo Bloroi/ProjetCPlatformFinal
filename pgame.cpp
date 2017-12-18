@@ -124,7 +124,7 @@ PGame::collision()
             for(int i=0;i< projectileVector.size();i++)
             {
 
-                if(projectileVector[i].GetPosition().x>( player.GetPosition().x+500)){
+                if(projectileVector[i].GetPosition().x>( player.GetPosition().x+500)||projectileVector[i].GetPosition().x<( player.GetPosition().x-500)){
                     projectileVector.erase(projectileVector.begin()+i);
                 }
                 else
@@ -141,8 +141,13 @@ PGame::collision()
                 }
 
 
-            }
+                }
 
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::F4)){
+               player.setKey(true);
+               player.setKey2(true);
+              std::cout<<"OKOK";
             }
 }
 

@@ -15,7 +15,6 @@ using namespace std;
 class PWelcome : public PMenus
 {
 private:
-    sf::RectangleShape rect;
     vector<button*>buttons;
 public:
     /*FORME CANONIQUE*/

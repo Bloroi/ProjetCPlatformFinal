@@ -12,7 +12,6 @@ using namespace std;
 class PAbout: public PMenus
 {
 private:
-    sf::RectangleShape rect;
      vector<button*>buttons;
      ostringstream ssAbout;
      sf::Text lblAbout;

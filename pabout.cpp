@@ -2,14 +2,12 @@
 
 PAbout::PAbout(sf::RenderWindow* window) : PMenus(window)
 {
-    rect.setPosition(sf::Vector2f(50,200));
-    rect.setSize(sf::Vector2f(30,30));
-    rect.setFillColor(sf::Color(250,250,231,255));
 
     buttons.push_back(new button("buttonBack",Panel::PWELCOME,2,sf::Vector2i(-240,-210),"images/BoutonRetourR.png","images/BoutonRetourV.png"));
 
     //about
-    ssAbout<<"Jeu realise par ADRIAENS Alexandre,\n"
+    ssAbout<<"MERCI D'AVOIR JOUER A NOTRE JEU !!\n\n"
+            <<"Jeu realise par ADRIAENS Alexandre,\n"
           <<"CARLIER Logan, SCIOT Celine.\n"
           <<"Etudiants de la HELHa Campus Mons,\n"
          <<"dans le cadre du cours de Mr. V. Altares.";
@@ -17,7 +15,7 @@ PAbout::PAbout(sf::RenderWindow* window) : PMenus(window)
     lblAbout.setFont(arial);
     lblAbout.setString(ssAbout.str());
    // lblAbout.setOrigin(lblAbout.getGlobalBounds().width-(mainWindow->getSize().x/4),lblAbout.getGlobalBounds().height);
-    lblAbout.setPosition(sf::Vector2f(-250,-50));
+    lblAbout.setPosition(sf::Vector2f(-280,-130));
 
     if(!backgroundTexture.loadFromFile("images/fond-book.png")){
         qDebug()<<"Fichier n'existe pas";
@@ -31,11 +29,13 @@ PAbout::PAbout(sf::RenderWindow* window) : PMenus(window)
             rBackground.setPosition(0,0);
         }
 
+
+
+
 }
 
 PAbout::PAbout(const PAbout& b){
 
-    this->rect=b.rect;
 
     this->buttons=b.buttons;
 
@@ -45,8 +45,6 @@ PAbout::PAbout(const PAbout& b){
 
 PAbout& PAbout::operator=(const PAbout& b){
     if(!(&b==this)){
-
-        this->rect=b.rect;
 
         this->buttons=b.buttons;
 
@@ -83,7 +81,6 @@ void PAbout::init()
        mouseClicked(buttons[i]);
 
    keyPressedOnce();
-   mainWindow->draw(rect);
 
    for(int i =0;i<buttons.size();i++)
        mainWindow->draw(buttons.at(i)->getSprite());

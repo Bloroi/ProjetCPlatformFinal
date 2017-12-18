@@ -3,12 +3,6 @@
 PWelcome::PWelcome(sf::RenderWindow* window) : PMenus(window)
 {
 
-
-  /*  rect.setPosition(sf::Vector2f(50,200));
-    rect.setSize(sf::Vector2f(30,30));
-    rect.setFillColor(sf::Color(33,42,231,255));*/
-
-
     buttons.push_back(new button("buttonPlay",Panel::PLEVEL1,2,sf::Vector2i(0,-150),"images/BoutonPlayR1.png","images/BoutonPlayV1.png"));
     buttons.push_back(new button("buttonOptions",Panel::PSETTINGS,2,sf::Vector2i(0,0),"images/BoutonOptionR.png","images/BoutonOptionV.png"));
     buttons.push_back(new button("buttonAbout",Panel::PABOUT,2,sf::Vector2i(0,150),"images/BoutonAPR.png","images/BoutonAPV.png"));
@@ -31,7 +25,6 @@ PWelcome::PWelcome(sf::RenderWindow* window) : PMenus(window)
 }
 PWelcome::PWelcome(const PWelcome& b){
 
-    this->rect=b.rect;
     this->buttons=b.buttons;
 
 }
@@ -39,7 +32,6 @@ PWelcome::PWelcome(const PWelcome& b){
 PWelcome& PWelcome::operator=(const PWelcome& b){
     if(!(&b==this)){
 
-    this->rect=b.rect;
     this->buttons=b.buttons;
 
     }

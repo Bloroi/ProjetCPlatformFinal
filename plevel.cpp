@@ -58,7 +58,7 @@ void PLevel::init()
     {
         if(items[0].GetCollider().CheckCollect(player.GetCollider())){
             if(item.GetCollider().CheckCollect(player.GetCollider())){
-                item.setPos(sf::Vector2f(0.00f,0.00f));
+                item.setPos(sf::Vector2f(-10000.0f,-10000.0f));
                 player.setKey(true);
                 se->playPickItem();
              }

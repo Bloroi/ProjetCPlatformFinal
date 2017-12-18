@@ -9,7 +9,7 @@ PLevel3::PLevel3(sf::RenderWindow* window): PGame(window)
         //ennemies
         readennemy(enemies,"level/enemiesLVL3.txt");
 
-
+        items.push_back(Item(sf::Vector2f(300,400),sf::Vector2f(11500,275),"images/porte.png"));
 }
 
 PLevel3::PLevel3(const PLevel3& b){
@@ -23,7 +23,7 @@ PLevel3::PLevel3(const PLevel3& b){
 
         this->enemies = b.enemies;
 
-
+        this->items= b.items;
 
 }
 
@@ -36,6 +36,8 @@ PLevel3& PLevel3::operator=(const PLevel3& b){
         this->projectileTexture= b.projectileTexture;
 
         this->enemies = b.enemies;
+
+        this->items= b.items;
 
     }
     return *this;
@@ -50,7 +52,16 @@ void PLevel3::init()
 {
     initDeltaTime();
 
+    /*Gestion collision avec les items*/
+    for(Item& item : items) // for each
+    {
 
+            if(items[0].GetCollider().CheckCollect(player.GetCollider()) && player.getKey2() && player.getKey()){
+                   setActiveP(PABOUT);
+            }
+
+
+    }
 
     collision();
     camera();
